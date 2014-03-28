@@ -16,8 +16,8 @@ function start() {
     response.end();
   }
 
-  http.createServer(onRequest).listen(8888);
-  console.log("Server has started.");
+  http.createServer(onRequest).listen(8080);
+  console.log("Server has started on port 8080");
 }
 
 exports.start = start;
