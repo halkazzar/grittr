@@ -1,10 +1,12 @@
-// Testing string for git server push 
+// include all required libraries
 
-var http = require('http');
+var server = require("./server");
+var myMongodb = require("./myMongodb");
 
-http.createServer(function (req, res) {
-  res.writeHead(200, {'Content-Type': 'text/plain'});
-  res.end('Welcome to Grittr\n');
-}).listen(8080);
+// Start Server; port number available in start()
+server.start();
 
-console.log('Server running on port: 8080');
+// Connect to MongoDB
+myMongodb.connectToDB();
+
+
