@@ -1,9 +1,15 @@
+// myMongodb.js
+// Files for working with MongoDB.
+// Author: Zhanat Abylkassym
+// Updated: Apr 1st, 2014
+// Location: Startbucks at Fremont, Warm Springs.
+
 // MongoDB settings and functions
 
 // ------------------------------
 // FUNCTIONS
 //
-// connect() - connest to a given DB on a server
+// connectToDB() - connest to a given DB on a server
 //
 // ------------------------------
 // TO DO:
@@ -21,8 +27,11 @@ function connectToDB(){
     if(!err) {
       console.log("We are connected to MongoDB");
     }
+    else {
+      console.log("myMongodb: error at connection: " + err);
+    }
   });
 }
 
-exports.connectToDB = connectToDB;
 
+exports.connectToDB = connectToDB;
