@@ -26,14 +26,17 @@ var server;
 function start(route, handle) {
   function onRequest(request, response) {
 
+    // take care of POST requests
     var postData = "";
 
-    //parse URL by "/" to get actual path
-    var path_url = url.parse(request.url).pathname.slice(0).split("/");
-
-    //whole Path
+    // parse URL by "/" to get actual path
+    var pathUrl = url.parse(request.url).pathname.slice(0).split("/");
+    console.log("server.js \t\t pathUrl = " + pathUrl);
+    
+    // whole Path
     var pathname = url.parse(request.url).pathname;
-
+    console.log("server.js \t\t pathname = " + pathname);
+  
     request.setEncoding("utf8");
 
     request.addListener("data", function(postDataChunk) {
@@ -44,7 +47,12 @@ function start(route, handle) {
     );
 
     request.addListener("end", function() {
-      route(handle, path_url, response, postData, pathname);
+      // handle - array of handlers; 
+      // pathUrl - part of URL right after domain and slash;
+      // postData - POST request; 
+      // pathname - full URL requested
+      
+      route(handle, pathUrl, response, postData, pathname);
       }
      );
   }
@@ -67,12 +75,6 @@ function close(){
       sockets.splice(sockets.indexOf(socket), 1);
     });
   });
-
-  // close Node.js server
-//  server.close(function () {
-//      console.log('Node.js server closed!');
-//      }
-//  );
 
   setTimeout(function () {
     server.close(function () {
