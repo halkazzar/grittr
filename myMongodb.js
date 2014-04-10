@@ -38,6 +38,8 @@ function connectToDB(){
       console.log("We are connected to MongoDB");
 
       collection = db.collection('tasks');
+      exports.collection = collection;
+      console.log("myMongodb.js \t\t collection = " + collection);
     }
     else {
       console.log("myMongodb: error at connection: " + err);
@@ -56,6 +58,10 @@ function insertToDB(doc) {
 }
 
 
+function getFromDD(){
 
+}
+
+// exports var collection on connectToDB function!!!
 exports.connectToDB = connectToDB;
 exports.insertToDB = insertToDB;

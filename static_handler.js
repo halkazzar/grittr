@@ -14,13 +14,13 @@
 fs = require("fs");
 
 function staticHandler (response, pathUrl, pathname) {
-  console.log("static_handler.js: \t\t server static file");
+//  console.log("static_handler.js: \t\t server static file");
 
   //this is an array of name of file and type.
   var fileType;
   var fileName = pathUrl[pathUrl.length-1].split(".");
 
-  console.log("static_handler.js: \t\t File name: "+ fileName[0] +"; File Type: " + fileName[fileName.length-1]+'; File Path: ' + pathname);
+//  console.log("static_handler.js: \t\t File name: "+ fileName[0] +"; File Type: " + fileName[fileName.length-1]+'; File Path: ' + pathname);
 
   if(fileName[fileName.length-1] == "css") fileType = "text/css";
   else if(fileName[fileName.length - 1] == "js") fileType = "text/javascript";

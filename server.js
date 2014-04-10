@@ -85,16 +85,16 @@ function close(){
       console.log('socket #' + i + ' destroyed');
       sockets[i].destroy();
     }
-  }, 10 * 1000);
+  }, 10 * 300);
 
-  var i = 10;
+  var i = 3;
   var x = setInterval(function () {
     console.log(i--);
     if (i === -1) {
       clearInterval(x);
       return;
     }
-  }, 1000);
+  }, 300);
 
 
 }

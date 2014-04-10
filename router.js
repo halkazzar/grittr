@@ -25,7 +25,7 @@
 
 
 function route(handle, pathUrl, response, postData, pathname) {
-  console.log("router.js: \t About to route a request for\t" + pathname);
+ // console.log("router.js: \t About to route a request for\t" + pathname);
 
   if(typeof handle[pathUrl[1]] === 'function'){
     // call actual handler

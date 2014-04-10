@@ -34,7 +34,7 @@ handle["addTask"] = task_handler.addTask;
 // Static file handlers
 handle["jquery"] = static_handler.staticHandler;
 handle["bootstrap"] = static_handler.staticHandler;
-
+handle["img"] = static_handler.staticHandler;
 
 
 // Start Server; port number available in start()
